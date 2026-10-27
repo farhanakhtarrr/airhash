@@ -1,0 +1,165 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --note-offset-x: 0px;
+  --note-offset-y: 0px;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.container {
+  max-width: 780px;
+  width: 100%;
+}
+
+h1 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  color: #fff;
+}
+
+.subtitle {
+  color: #94a3b8;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.drop-zone {
+  border: 2px dashed #334155;
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: #1e293b;
+}
+
+.drop-zone:hover,
+.drop-zone.dragover {
+  border-color: #3b82f6;
+  background: #243449;
+}
+
+.drop-zone input {
+  display: none;
+}
+
+.drop-zone p {
+  margin-bottom: 0.5rem;
+  color: #cbd5e1;
+}
+
+.drop-zone small {
+  color: #64748b;
+}
+
+.result {
+  margin-top: 1.5rem;
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 20px;
+  padding: 1.25rem;
+  display: none;
+}
+
+.result.show {
+  display: block;
+}
+
+.result label {
+  display: block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748b;
+  margin-bottom: 0.5rem;
+}
+
+.hash-output {
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  color: #38bdf8;
+  word-break: break-all;
+  line-height: 1.5;
+  background: #0f172a;
+  padding: 1rem;
+  border-radius: 6px;
+  min-height: 2rem;
+}
+
+.hash-output.error {
+  color: #f87171;
+}
+
+.status {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  color: #94a3b8;
+  text-align: center;
+  min-height: 1.2em;
+}
+
+.copy-btn {
+  margin-top: 0.75rem;
+  padding: 0.5rem 1rem;
+  background: #3b82f6;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background 0.2s;
+}
+
+.copy-btn:hover {
+  background: #2563eb;
+}
+
+.note {
+  position: relative;
+  left: 2px;
+  top: 56px;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: #1e293b;
+  border-left: 3px solid #3b82f6;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.debug {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.72rem;
+  color: #94a3b8;
+  white-space: pre-wrap;
+  display: none;
+  max-height: 240px;
+  overflow: auto;
+}
+
+.debug.show {
+  display: block;
+}
